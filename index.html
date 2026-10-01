@@ -3,58 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бронювання квитків</title>
+    <title>Бронювання квитків | Concert Night</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <a href="#main-content" class="skip-link">перейти до основного вмісту</a>
-    <header class="header">
-        <h1>Подія року: Концерт у вашому місті!</h1>
-        <nav>
-            <ul>
-                <li><a href="#about-event">про події</a></li>
-                <li><a href="#contact">контакти</a></li>
-                <li><a href="#ticket">квитки</a></li>
-            </ul>
-        </nav>
-     </header>
-     <main id="main-content">
-        <section id="about-event">
-            <h2>Про подію</h2>
 
+    <header class="header">
+        <div class="container header-inner">
+            <h1>Concert Night</h1>
+            <nav aria-label="Головна навігація">
+                <ul>
+                    <li><a href="#about-event">Про подію</a></li>
+                    <li><a href="#ticket">Квитки</a></li>
+                    <li><a href="#contact">Контакти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="container">
+        <section class="hero">
+            <div class="hero-text">
+                <p class="eyebrow">Подія року</p>
+                <h2>Концерт у вашому місті</h2>
+                <p>
+                    Приєднуйтесь до незабутнього вечора з живою музикою,
+                    яскравою атмосферою та найкращими українськими артистами.
+                </p>
+                <div class="hero-meta">
+                    <span>25 березня 2025</span>
+                    <span>Концертна зала "Україна"</span>
+                </div>
+            </div>
+
+            <div class="ticket-card">
+                <h3>Початок 19:30</h3>
+                <p>Стандартний квиток</p>
+                <strong>500 грн</strong>
+                <a href="#ticket" class="cta-link">Забронювати</a>
+            </div>
+        </section>
+
+        <section id="about-event" class="info-block">
+            <h2>Про подію</h2>
             <p>
-            Приєднуйтесь до незабутнього концерту із зірками української сцени.
-            Це подія, яку не можна пропустити! Насолоджуйтесь живою музикою,
-            неймовірною атмосферою та хорошим настроєм.
+                Це вечір, який поєднує потужні мелодії, святкову атмосферу
+                та відчуття справжнього музичного свята. Не пропустіть шанс
+                провести час разом із друзями та насолодитися живим виступом.
             </p>
 
-            <p><strong>Дата:</strong> 25 березня 2025 року</p>
-
-            <p><strong>Місце:</strong> Концертна зала "Україна", м. Київ</p>
+            <div class="features">
+                <article>
+                    <h3>Жива музика</h3>
+                    <p>Найкращі українські виконавці на одній сцені.</p>
+                </article>
+                <article>
+                    <h3>Зручне місце</h3>
+                    <p>Центральна концертна зала з комфортним розташуванням.</p>
+                </article>
+                <article>
+                    <h3>Святкова атмосфера</h3>
+                    <p>Світло, звук та емоції, які запам'ятаються надовго.</p>
+                </article>
+            </div>
         </section>
-        <section id="ticket">
-            <h2>Квитки</h2>
 
+        <section id="ticket" class="ticket-section">
+            <h2>Квитки</h2>
             <p>Виберіть тип квитка та заповніть форму бронювання:</p>
 
-            <form action="/submit-ticket" method="post">
+            <form action="/submit-ticket" method="post" class="booking-form">
+                <label for="ticket-type">Тип квитка</label>
                 <select id="ticket-type" name="ticket-type" required>
                     <option value="standard">Стандартний - 500 грн</option>
                     <option value="vip">VIP - 1000 грн</option>
                 </select>
 
+                <label for="name">Ім'я</label>
                 <input type="text" id="name" name="name" placeholder="Введіть ваше ім'я" required>
 
+                <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="example@mail.com" required>
-                
+
+                <label for="phone">Телефон</label>
                 <input type="tel" id="phone" name="phone" placeholder="+380123456789" required>
-                
+
                 <button type="submit">Забронювати</button>
             </form>
         </section>
-        <section id="contact">
-            <h2>Контакти</h2>
 
+        <section id="contact" class="info-block">
+            <h2>Контакти</h2>
             <p>Зв'яжіться з нами, якщо маєте питання:</p>
 
             <address>
@@ -62,13 +102,12 @@
                 <p>Телефон: <a href="tel:+380987654321">+380 98 765 4321</a></p>
             </address>
         </section>
-     </main>
-     <footer id="footer">
-        <p>
-        &copy; 2025 Бронювання квитків.
-        Усі права захищено.
-        </p>
-     </footer>
-    
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2025 Бронювання квитків. Усі права захищено.</p>
+        </div>
+    </footer>
 </body>
 </html>
